@@ -7,10 +7,10 @@ async def main():
     client = McpClient()
 
     try:
-        await client.initialize_with_stdio("mcp", ["run", "servers/server_test.py"])
+        # await client.initialize_with_stdio("mcp", ["run", "servers/server_test.py"])
         
         # caso queira conectar por sse
-        # await client.initialize_with_sse("http://localhost:8000/sse")
+        await client.initialize_with_sse("http://localhost:8000/sse")
 
         print("Listando tools")
         tools = await client.get_tools()
